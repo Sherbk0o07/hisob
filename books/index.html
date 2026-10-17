@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional clothing warehouse and inventory management dashboard">
+  <title>Clothes Stock — Warehouse Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">W</div>
+      <div><strong>WAREHOUSE</strong><span>CLOTHES STOCK</span></div>
+      <button class="icon-btn sidebar-close" id="sidebarClose" aria-label="Close menu">×</button>
+    </div>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <button class="nav-item active" data-page="dashboard"><span>▦</span>Dashboard</button>
+      <button class="nav-item" data-page="products"><span>▣</span>Products</button>
+      <button class="nav-item" data-page="inventory"><span>▤</span>Inventory</button>
+      <button class="nav-item" data-page="warehouses"><span>⌂</span>Warehouses</button>
+      <button class="nav-item" data-page="purchases"><span>＋</span>Purchases</button>
+      <button class="nav-item" data-page="sales"><span>🛒</span>Sales</button>
+      <button class="nav-item" data-page="transfers"><span>⇄</span>Transfers</button>
+      <button class="nav-item" data-page="suppliers"><span>◈</span>Suppliers</button>
+      <button class="nav-item" data-page="customers"><span>♙</span>Customers</button>
+      <button class="nav-item" data-page="reports"><span>▥</span>Reports</button>
+      <button class="nav-item" data-page="analytics"><span>◒</span>Analytics</button>
+      <button class="nav-item" data-page="settings"><span>⚙</span>Settings</button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="system-status"><i></i><span>System operational</span></div>
+      <small>v1.0 · Frontend Demo</small>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="top-left">
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+        <div>
+          <div class="eyebrow">OPERATIONS</div>
+          <h1 id="pageTitle">Warehouse Dashboard</h1>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <div class="global-search">
+          <span>⌕</span>
+          <input id="globalSearch" type="search" placeholder="Search products, SKU, barcode..." autocomplete="off">
+          <div class="search-results" id="searchResults"></div>
+        </div>
+
+        <div class="top-icon-wrap">
+          <button class="icon-btn" id="notificationBtn" aria-label="Notifications">🔔<b class="notification-count" id="notificationCount">0</b></button>
+          <div class="dropdown notification-dropdown" id="notificationDropdown"></div>
+        </div>
+
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">☾</button>
+
+        <div class="profile">
+          <div class="avatar">SA</div>
+          <div class="profile-info"><strong>Store Admin</strong><span>Administrator</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="content" id="app"></section>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal"></div>
+</div>
+
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
